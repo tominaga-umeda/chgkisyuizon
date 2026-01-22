@@ -1,0 +1,28 @@
+# Delphi ソースコード（Pascal）
+*.pas text working-tree-encoding=Shift_JIS
+*.dfm text working-tree-encoding=Shift_JIS
+*.dpr text working-tree-encoding=Shift_JIS
+*.cfg text working-tree-encoding=Shift_JIS
+*.dof text working-tree-encoding=Shift_JIS
+*.ddp text working-tree-encoding=Shift_JIS
+*.dpk text working-tree-encoding=Shift_JIS
+*.dproj text working-tree-encoding=Shift_JIS
+*.rc text working-tree-encoding=Shift_JIS
+*.ini text working-tree-encoding=Shift_JIS
+*.txt text working-tree-encoding=Shift_JIS
+*.md text working-tree-encoding=Shift_JIS
+
+# バイナリファイル（差分不可）
+*.res binary
+*.exe binary
+*.ddp binary
+*.dll binary
+*.dcu binary
+*.bpl binary
+*.lib binary
+
+# Git に差分を無視させるファイル（履歴は残すが diff しない）
+*.bmp -diff
+*.jpg -diff
+*.png -diff
+*.ico -diff

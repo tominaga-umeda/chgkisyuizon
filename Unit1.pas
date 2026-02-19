@@ -45,6 +45,7 @@ type
   private
     { Private 宣言 }
     g_saFileName: AnsiString;
+    procedure ChangeRedComponentsToRandomColors;
   public
     { Public 宣言 }
   end;
@@ -56,11 +57,17 @@ implementation
 
 {$R *.dfm}
 
+// アプリケーション起動時にRandomizeを呼び出して乱数ジェネレータを初期化
 procedure TForm1.FormCreate(Sender: TObject);
 var
   sl, sll: TStringList;
   iw: Word;
 begin
+  Randomize;
+
+  // ランダムな色に変更する関数を呼び出す
+  ChangeRedComponentsToRandomColors;
+  
   sl := TStringList.Create;
   sll := TStringList.Create;
   try
@@ -74,6 +81,32 @@ begin
     sl.Free;
     sll.Free;
   end;
+end;
+
+// ランダムな色を生成する関数
+function GetRandomColor: TColor;
+begin
+  // RGB値をランダムに生成 (0-255の範囲)
+  Result := RGB(Random(256), Random(256), Random(256));
+end;
+
+// 赤色のコンポーネントをランダムな色に変更する関数
+procedure TForm1.ChangeRedComponentsToRandomColors;
+begin
+  // SpeedButton4 のフォント色をランダムな色に変更
+  SpeedButton4.Font.Color := GetRandomColor;
+  
+  // SpeedButton6 のフォント色をランダムな色に変更
+  SpeedButton6.Font.Color := GetRandomColor;
+  
+  // Label4 のフォント色をランダムな色に変更
+  Label4.Font.Color := GetRandomColor;
+  
+  // Label5 のフォント色をランダムな色に変更
+  Label5.Font.Color := GetRandomColor;
+  
+  // Label6 のフォント色をランダムな色に変更
+  Label6.Font.Color := GetRandomColor;
 end;
 
 procedure TForm1.FormResize(Sender: TObject);
